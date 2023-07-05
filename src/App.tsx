@@ -1,13 +1,16 @@
 import { useState } from 'react';
 
 import { Sidebar } from 'components/Sidebar';
+import { SidebarProvider } from 'components/SidebarProvider';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <Sidebar />
+      <SidebarProvider>
+        <Sidebar />
+      </SidebarProvider>
     </>
   );
 }

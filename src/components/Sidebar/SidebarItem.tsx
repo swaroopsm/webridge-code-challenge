@@ -1,6 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
 
+import { useSidebar } from 'components/SidebarProvider';
+
 interface Props {
   icon: React.FunctionComponent<React.ComponentProps<'svg'>>;
   label: string;
@@ -8,6 +10,8 @@ interface Props {
 }
 
 export function SidebarItem({ icon: Icon, label, active }: Props) {
+  const { expanded } = useSidebar();
+
   return (
     <div
       className={cx(
@@ -25,11 +29,18 @@ export function SidebarItem({ icon: Icon, label, active }: Props) {
         )}
       >
         <Icon
-          className={cx('text-light-icon', {
+          className={cx('text-light-icon flex-shrink-0', {
             'text-light-interactive-primary': active,
           })}
         />
-        <span className="text-light-text text-sm font-semibold">{label}</span>
+        <span
+          className={cx(
+            'hidden text-light-text text-sm font-semibold',
+            expanded && 'md:inline-block'
+          )}
+        >
+          {label}
+        </span>
       </a>
     </div>
   );
