@@ -13,9 +13,11 @@ export default {
           icon: '#555555',
           surface: {
             DEFAULT: '#FDFDFD',
+            hovered: '#F0F0F0',
             'neutral-subdued': '#F4F4F4',
             'selection-primary': {
               DEFAULT: '#E9F1E7',
+              hovered: '#E3EDE0',
             },
           },
           brand: {
@@ -31,9 +33,11 @@ export default {
           icon: '#CACACA',
           surface: {
             DEFAULT: '#4A4A4A',
+            hovered: '#3B3B3B',
             'neutral-subdued': '#313131',
             'selection-primary': {
               DEFAULT: '#343E32',
+              hovered: '#313A2F',
             },
           },
           brand: {
