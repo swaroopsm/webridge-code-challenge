@@ -1,8 +1,51 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        light: {
+          DEFAULT: '#EFEFEF',
+          primary: '#267B0C',
+          text: '#2D2D2D',
+          interactive: { primary: '#267B0C' },
+          icon: '#555555',
+          surface: {
+            DEFAULT: '#FDFDFD',
+            'neutral-subdued': '#F4F4F4',
+            'selection-primary': {
+              DEFAULT: '#E9F1E7',
+            },
+          },
+          brand: {
+            'green-100': '#3CBE14',
+            'dark-gray': '#2D2D2D',
+          },
+        },
+        dark: {
+          DEFAULT: '#2D2D2D',
+          primary: '#3CBE14',
+          text: '#EFEFEF',
+          interactive: { primary: '#3CBE14' },
+          icon: '#CACACA',
+          surface: {
+            DEFAULT: '#4A4A4A',
+            'neutral-subdued': '#313131',
+            'selection-primary': {
+              DEFAULT: '#343E32',
+            },
+          },
+          brand: {
+            'green-100': '#3CBE14',
+            'dark-gray': '#FFFFFF',
+          },
+        },
+      },
+      screens: {
+        sm: '560px',
+      },
+    },
   },
   plugins: [],
 };
