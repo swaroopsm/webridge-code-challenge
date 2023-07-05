@@ -1,5 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
+import { Link } from 'react-router-dom';
 
 import { ReactComponent as LogoSmall } from 'assets/logo-small.svg';
 import { ReactComponent as Logo } from 'assets/logo.svg';
@@ -13,12 +14,12 @@ import { ReactComponent as IconApplications } from 'assets/icons/applications.sv
 import { ReactComponent as IconChevron } from 'assets/icons/chevron.svg';
 
 import { useSidebar } from 'components/SidebarProvider';
+import { RoutePath } from 'routes/types';
 
 import { SidebarSection } from './SidebarSection';
 
 export function Sidebar() {
   const { expanded, toggleSidebar } = useSidebar();
-  console.log({ expanded });
 
   return (
     <aside
@@ -38,6 +39,7 @@ export function Sidebar() {
             {
               icon: IconDashboard,
               label: 'Dashboard',
+              href: RoutePath.Dashboard,
               active: true,
             },
           ]}
@@ -49,10 +51,12 @@ export function Sidebar() {
             {
               icon: IconCatalogs,
               label: 'Catalogs',
+              href: RoutePath.Catalogs,
             },
             {
               icon: IconVendors,
               label: 'Vendors',
+              href: RoutePath.Vendors,
             },
           ]}
         />
@@ -63,10 +67,12 @@ export function Sidebar() {
             {
               icon: IconUsers,
               label: 'Users',
+              href: RoutePath.Users,
             },
             {
               icon: IconViews,
               label: 'Views',
+              href: RoutePath.Views,
             },
           ]}
         />
@@ -77,10 +83,12 @@ export function Sidebar() {
             {
               icon: IconTenants,
               label: 'Tenants',
+              href: RoutePath.Tenants,
             },
             {
               icon: IconApplications,
               label: 'Applications',
+              href: RoutePath.Applications,
             },
           ]}
         />
@@ -90,7 +98,7 @@ export function Sidebar() {
         <button
           aria-label={expanded ? 'Collape sidebar' : 'Expand sidebar'}
           onClick={toggleSidebar}
-          className="p-4 hidden md:flex justify-end w-full"
+          className="p-4 hidden md:flex justify-end w-full hover:bg-light-surface-hovered"
         >
           <IconChevron className={cx(!expanded && 'rotate-180')} />
         </button>
