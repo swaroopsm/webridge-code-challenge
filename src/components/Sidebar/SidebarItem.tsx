@@ -14,7 +14,10 @@ export function SidebarItem({ icon: Icon, label, href }: Props) {
   const { expanded, isHamburgerMenuOpen } = useSidebar();
 
   return (
-    <NavLink to={href}>
+    <NavLink
+      to={href}
+      className="block focus-visible:shadow-sidebar-item-light-focussed-light dark:focus-visible:shadow-sidebar-item-dark-focussed rounded-lg outline-none"
+    >
       {({ isActive }) => (
         <div
           className={cx(
@@ -26,11 +29,9 @@ export function SidebarItem({ icon: Icon, label, href }: Props) {
         >
           <div
             className={cx(
-              {
-                'bg-light-surface-selection-primary dark:bg-dark-surface-selection-primary border-l-light-interactive-primary hover:bg-light-surface-selection-primary-hovered dark:hover:bg-dark-surface-selection-selecteion-primary-hovered':
-                  isActive,
-              },
-              'flex gap-4 items-center px-2 py-[10px] rounded-lg cursor-pointer hover:bg-light-surface-hovered dark:hover:bg-dark-surface-hovered'
+              'flex gap-4 items-center px-2 py-[10px] rounded-lg cursor-pointer hover:bg-light-surface-hovered dark:hover:bg-dark-surface-hovered active:bg-light-surface-pressed dark:active:bg-dark-surface-pressed ',
+              isActive &&
+                'bg-light-surface-selection-primary dark:bg-dark-surface-selection-primary border-l-light-interactive-primary hover:bg-light-surface-selection-primary-hovered dark:hover:bg-dark-surface-selection-primary-hovered'
             )}
           >
             <Icon

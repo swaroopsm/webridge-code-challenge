@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
+import React from 'react';
+import { Outlet } from 'react-router-dom';
 
 import { Sidebar } from 'components/Sidebar';
 import { SidebarProvider } from 'components/SidebarProvider';
@@ -11,7 +11,7 @@ export function RootPage() {
       <SidebarProvider>
         <Sidebar />
 
-        <div className="p-5">
+        <div className="p-5 flex-1 pb-[1000px]">
           <MobileSidebarToggleControl />
 
           <main>

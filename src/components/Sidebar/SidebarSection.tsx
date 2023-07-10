@@ -12,14 +12,13 @@ interface Props {
 
 export function SidebarSection({ title, items }: Props) {
   const { expanded } = useSidebar();
-  console.log({ expanded });
 
   return (
     <div>
       {title && (
         <h3
           className={cx(
-            'text-xs text-light-primary font-semibold pb-2 pl-4 hidden',
+            'text-xs text-light-primary font-semibold pb-2 pl-4 sm:hidden',
             expanded && 'lg:inline-block'
           )}
         >
