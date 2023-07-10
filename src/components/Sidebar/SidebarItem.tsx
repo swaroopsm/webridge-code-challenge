@@ -43,7 +43,9 @@ export function SidebarItem({ icon: Icon, label, href }: Props) {
                 }
               )}
             />
-            <span className="sm:sr-only">{label}</span>
+
+            {!expanded && <span className="sr-only">{label}</span>}
+
             <span
               className={cx(
                 'text-light-text text-sm font-semibold dark:text-dark-text sm:hidden',

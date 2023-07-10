@@ -76,17 +76,13 @@ export function Sidebar() {
             <NavLink to={RoutePath.Dashboard} aria-label="Webridge logo">
               <LogoSmall
                 className={cx(
-                  isHamburgerMenuOpen && 'hidden',
-                  expanded ? 'lg:hidden' : 'lg:block',
-                  'sm:block'
+                  'hidden sm:block',
+                  expanded ? 'lg:hidden' : 'lg:block'
                 )}
               />
+
               <Logo
-                className={cx(
-                  'sm:hidden',
-                  isHamburgerMenuOpen ? null : 'hidden',
-                  expanded ? 'lg:block' : null
-                )}
+                className={cx('block sm:hidden', expanded ? 'lg:block' : null)}
               />
             </NavLink>
           </div>
