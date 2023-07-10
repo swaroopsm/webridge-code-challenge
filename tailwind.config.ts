@@ -1,8 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: 'class',
+  darkMode: 'media',
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    fontFamily: {
+      display: ['Inter Variable', 'sans-serif'],
+      body: ['Roboto Mono Variable', 'sans-serif'],
+    },
     extend: {
       colors: {
         light: {

@@ -1,3 +1,8 @@
+/* Fonts */
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/roboto-mono';
+
+/* Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

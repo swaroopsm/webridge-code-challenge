@@ -8,11 +8,10 @@ interface Props {
   icon: React.FunctionComponent<React.ComponentProps<'svg'>>;
   label: string;
   href: string;
-  active?: boolean;
 }
 
-export function SidebarItem({ icon: Icon, label, active, href }: Props) {
-  const { expanded } = useSidebar();
+export function SidebarItem({ icon: Icon, label, href }: Props) {
+  const { expanded, isHamburgerMenuOpen } = useSidebar();
 
   return (
     <NavLink to={href}>
@@ -20,27 +19,34 @@ export function SidebarItem({ icon: Icon, label, active, href }: Props) {
         <div
           className={cx(
             'px-2 border-l-[3px] border-solid',
-            isActive ? 'border-light-interactive-primary' : 'border-transparent'
+            isActive
+              ? 'border-light-interactive-primary dark:border-dark-interactive-primary'
+              : 'border-transparent'
           )}
         >
           <div
             className={cx(
-              'flex gap-4 items-center px-2 py-[10px] rounded-lg cursor-pointer hover:bg-light-surface-hovered',
               {
-                'bg-light-surface-selection-primary border-l-light-interactive-primary hover:bg-light-surface-selection-primary-hovered':
+                'bg-light-surface-selection-primary dark:bg-dark-surface-selection-primary border-l-light-interactive-primary hover:bg-light-surface-selection-primary-hovered dark:hover:bg-dark-surface-selection-selecteion-primary-hovered':
                   isActive,
-              }
+              },
+              'flex gap-4 items-center px-2 py-[10px] rounded-lg cursor-pointer hover:bg-light-surface-hovered dark:hover:bg-dark-surface-hovered'
             )}
           >
             <Icon
-              className={cx('text-light-icon flex-shrink-0', {
-                'text-light-interactive-primary': active,
-              })}
+              className={cx(
+                'text-light-icon flex-shrink-0 dark:text-dark-icon',
+                {
+                  'text-light-interactive-primary dark:text-dark-interactive-primary':
+                    isActive,
+                }
+              )}
             />
             <span
               className={cx(
-                'hidden text-light-text text-sm font-semibold',
-                expanded && 'md:inline-block'
+                'text-light-text text-sm font-semibold dark:text-dark-text sm:hidden',
+                expanded ? 'lg:inline-block' : 'lg:hidden',
+                isHamburgerMenuOpen ? 'inline-block' : 'hidden'
               )}
             >
               {label}

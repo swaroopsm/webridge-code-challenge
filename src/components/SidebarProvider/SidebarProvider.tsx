@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 
 import { SidebarContext } from './context';
 
@@ -9,6 +9,7 @@ interface Props {
 export function SidebarProvider({ children }: Props) {
   const [value, setValue] = useState({
     expanded: true,
+    isHamburgerMenuOpen: false,
   });
 
   const toggleSidebar = useCallback(() => {
@@ -18,13 +19,23 @@ export function SidebarProvider({ children }: Props) {
     }));
   }, [setValue]);
 
+  const toggleHamburgerMenu = useCallback(() => {
+    setValue((value) => ({
+      ...value,
+      isHamburgerMenuOpen: !value.isHamburgerMenuOpen,
+    }));
+  }, [setValue]);
+
+  const memoizedValue = useMemo(() => {
+    return {
+      ...value,
+      toggleSidebar,
+      toggleHamburgerMenu,
+    };
+  }, [value, toggleSidebar, toggleHamburgerMenu]);
+
   return (
-    <SidebarContext.Provider
-      value={{
-        ...value,
-        toggleSidebar,
-      }}
-    >
+    <SidebarContext.Provider value={memoizedValue}>
       {children}
     </SidebarContext.Provider>
   );

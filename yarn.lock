@@ -343,6 +343,16 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.44.0.tgz#961a5903c74139390478bdc808bcde3fc45ab7af"
   integrity sha512-Ag+9YM4ocKQx9AarydN0KY2j0ErMHNIocPDrVo8zAE44xLTjEtz81OdR68/cydGtk6m6jDb5Za3r2useMzYmSw==
 
+"@fontsource-variable/inter@^5.0.4":
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/inter/-/inter-5.0.4.tgz#6e9a01c89df75f4cba06a0d84442f8d62a2109dc"
+  integrity sha512-MYomT1JVwFAPhinw3N4mQbtwNCXSQ2n+W2JFCgXNyhzDL7hgAXzI89/yZRyNz5kYfyyG7pgsOj9YZ0aujlHbEw==
+
+"@fontsource-variable/roboto-mono@^5.0.5":
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/roboto-mono/-/roboto-mono-5.0.5.tgz#48b89aea6d4ec74006aef9ff16fcd1f36ae10698"
+  integrity sha512-YXInqP4Ae7GDvE5TVAI9RnFDMbTf7SR1Q7QZ5ZnsIgypqyFhsTylRlX9v8Zx/W4B3LX+ye59VwNVdZAuR0Rgkg==
+
 "@humanwhocodes/config-array@^0.11.10":
   version "0.11.10"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.10.tgz#5a3ffe32cc9306365fb3fd572596cd602d5e12d2"
