@@ -48,13 +48,13 @@ export function Sidebar() {
           onClick={toggleHamburgerMenu}
         />
       )}
-      <div
+      <aside
         className={cx(
           'sm:w-[60px] w-0',
           expanded ? 'lg:w-[256px]' : 'lg:w-[60px]'
         )}
       >
-        <aside
+        <div
           className={cx(
             'fixed bg-light-surface dark:bg-dark-surface h-screen font-display transition-all sm:translate-x-0 w-[256px] overflow-auto',
             'sm:w-[60px]',
@@ -77,13 +77,13 @@ export function Sidebar() {
               <LogoSmall
                 className={cx(
                   isHamburgerMenuOpen && 'hidden',
-                  expanded ? 'lg:hidden' : 'log:block',
-                  'md:block'
+                  expanded ? 'lg:hidden' : 'lg:block',
+                  'sm:block'
                 )}
               />
               <Logo
                 className={cx(
-                  'md:hidden',
+                  'sm:hidden',
                   isHamburgerMenuOpen ? null : 'hidden',
                   expanded ? 'lg:block' : null
                 )}
@@ -160,8 +160,8 @@ export function Sidebar() {
               <IconChevron className={cx(!expanded && 'rotate-180')} />
             </button>
           </div>
-        </aside>
-      </div>
+        </div>
+      </aside>
     </>
   );
 }

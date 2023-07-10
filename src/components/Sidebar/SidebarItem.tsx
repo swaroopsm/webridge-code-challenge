@@ -16,7 +16,7 @@ export function SidebarItem({ icon: Icon, label, href }: Props) {
   return (
     <NavLink
       to={href}
-      className="block focus-visible:shadow-sidebar-item-light-focussed-light dark:focus-visible:shadow-sidebar-item-dark-focussed rounded-lg outline-none"
+      className="block rounded-lg outline-none focus-visible:shadow-sidebar-item-light-focussed dark:focus-visible:shadow-sidebar-item-dark-focussed focus-visible:z-10 relative"
     >
       {({ isActive }) => (
         <div

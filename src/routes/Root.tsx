@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 import { Sidebar } from 'components/Sidebar';
 import { SidebarProvider } from 'components/SidebarProvider';
-import { MobileSidebarToggleControl } from 'components/MobileSidebarToggleControl';
+import { Header } from 'components/Header';
 
 export function RootPage() {
   return (
@@ -12,9 +12,9 @@ export function RootPage() {
         <Sidebar />
 
         <div className="p-5 flex-1 pb-[1000px]">
-          <MobileSidebarToggleControl />
+          <Header />
 
-          <main>
+          <main className="mt-8">
             <Outlet />
           </main>
         </div>

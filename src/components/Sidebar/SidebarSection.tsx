@@ -14,7 +14,7 @@ export function SidebarSection({ title, items }: Props) {
   const { expanded } = useSidebar();
 
   return (
-    <div>
+    <section>
       {title && (
         <h3
           className={cx(
@@ -25,9 +25,13 @@ export function SidebarSection({ title, items }: Props) {
           {title}
         </h3>
       )}
-      {items.map((item) => (
-        <SidebarItem key={item.label} {...item} />
-      ))}
-    </div>
+      <ul className="flex flex-col gap-0">
+        {items.map((item) => (
+          <li key={item.label}>
+            <SidebarItem {...item} />
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
