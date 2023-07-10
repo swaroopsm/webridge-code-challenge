@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { ReactComponent as IconHamburger } from 'assets/icons/hamburger.svg';
 import { useSidebar } from 'components/SidebarProvider';
 
